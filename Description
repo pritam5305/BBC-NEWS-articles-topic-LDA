@@ -1,0 +1,51 @@
+Problem Scenario: You are given a zip file which contains summaries of news from BBC. The
+data is taken from Kaggle. (https://www.kaggle.com/pariza/bbc-news-summary).
+The zip file contains a folder: BBC News Articles
+This folder contains 5 sub-folders, named:
+1. Business
+2. Entertainment
+3. Politics
+4. Sports
+5. Tech
+Each of these sub-folders contains text files which have summaries of different news articles.
+Objective: To perform document clustering in order to assign similar articles under a single
+cluster label.
+Tasks to Perform:
+● Read all the files from all the sub-folders and store their summaries in a single CSV file.
+Name the .csv file as: BBCNewsArticles.csv
+The .csv file should contain:
+
+Article
+&lt;The text from file 1
+&gt;
+&lt;The text from file 2&gt;
+&lt;The text from file 3&gt;
+………
+
+● Randomly arrange the data to avoid data-biased modeling.
+● Preprocess each article using text preprocessing (Hint: Use the preprocess module
+preloaded in the lab for the same. The preprocess module refines the string using
+tokenization function, WordNet lemmatizer function, and stop word removal function.
+● On the preprocessed text, perform vectorization using three types of vectors:
+
+1. PresenceAbsenceVector: It converts articles to vectors using Presence
+and Absence of Words. If the token exists, it results in index 1 and if it
+doesn’t, it displays the vector index as 0.
+2. CountVector: Converts articles to vectors using count of words.
+3. TF-IDF Vector: Converts articles to vectors using TF-IDF vectorization.
+● Perform clustering on the dataset using all 3 types of vectorizations. The number of
+clusters should be five.
+You can choose any appropriate clustering algorithm.
+Make models for each type of vectorization. We will have a total of three models.
+
+● Save the cluster’s label for each model in a new CSV file named:
+BBCNewsArticlesClustered.csv
+● Evaluate and compare the performance of the 3 models based on Silhouette Coefficient.
+● Provide visualizations for all the 3 models. You can show scatter plots and bar graphs
+comparing the distribution of articles within the clusters.
+● Provide your explanation for the following questions:
+1. What does the Silhouette Coefficient tell us?
+2. Which algorithm did you choose and why?
+3. Can you provide an appropriate name to a cluster label? If yes, explain your
+observations.
+4. Which vectorization technique is the best and why?
